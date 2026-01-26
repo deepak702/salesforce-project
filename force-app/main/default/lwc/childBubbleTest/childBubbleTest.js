@@ -1,6 +1,6 @@
 import { LightningElement } from 'lwc';
 
-export default class ChildComposedTest extends LightningElement {
+export default class ChildBubbleTest extends LightningElement {
 
     fireEvent() {
         // BUBBLES PROPERTY DEMONSTRATION:
@@ -23,7 +23,7 @@ export default class ChildComposedTest extends LightningElement {
             detail: {
                 message: 'Event reached parent successfully'
             },
-            bubbles: true,  // Set to FALSE to see event stop propagating
+            bubbles: false,  // Set to FALSE to see event stop propagating
             composed: false
         });
 

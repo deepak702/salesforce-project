@@ -7,7 +7,7 @@
         <!-- Events bubble up the DOM tree if bubbles: true is set -->
         <lightning-record-edit-form object-api-name="Account">
             <c-wrapper-boundary>
-                <c-child-composed-test oncustomevent={handleChildEventBubbleIsFalse}></c-child-composed-test>
+                <c-child-bubble-test oncustomevent={handleChildEventBubbleIsFalse}></c-child-bubble-test>
             </c-wrapper-boundary>
         </lightning-record-edit-form>
 
