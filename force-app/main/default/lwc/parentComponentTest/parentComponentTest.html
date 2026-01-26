@@ -6,19 +6,19 @@
         <!-- This demonstrates the BUBBLES property -->
         <!-- Events bubble up the DOM tree if bubbles: true is set -->
         <lightning-record-edit-form object-api-name="Account">
-            <c-wrapper-boundary>
-                <c-child-bubble-test oncustomevent={handleChildEventBubbleIsFalse}></c-child-bubble-test>
+            <c-wrapper-boundary oncustomevent={handleChildEvent}>
+                <c-child-bubble-test></c-child-bubble-test>
             </c-wrapper-boundary>
         </lightning-record-edit-form>
 
         <!-- Display event at parent component level -->
-        <template if:true={isEventReceivedWhenBubbleIsFalse}>
+        <template if:true={isEventReceived}>
             <div class="slds-m-top_medium slds-box slds-theme_success">
                 <p class="slds-text-heading_small">
                     Event received from child component
                 </p>
                 <p class="slds-m-top_x-small">
-                    <strong>Message:</strong> {messageFromChildWhenBubbleIsFalse}
+                    <strong>Message:</strong> {messageFromChild}
                 </p>
             </div>
         </template>
