@@ -1,10 +1,10 @@
 <template>
-    <lightning-card title="Composed Event Test (UI Demo)">
+    <lightning-card title="Bubbles Event Test (UI Demo)">
         
         <!-- Shadow DOM boundary -->
         <!-- NOTE: Parent listens on wrapper, not directly on child -->
-        <!-- This forces the event to cross the wrapper's shadow DOM boundary -->
-        <!-- Therefore, composed: true is REQUIRED for this to work -->
+        <!-- This demonstrates the BUBBLES property -->
+        <!-- Events bubble up the DOM tree if bubbles: true is set -->
         <lightning-record-edit-form object-api-name="Account">
             <c-wrapper-boundary oncustomevent={handleChildEvent}>
                 <c-child-composed-test></c-child-composed-test>
