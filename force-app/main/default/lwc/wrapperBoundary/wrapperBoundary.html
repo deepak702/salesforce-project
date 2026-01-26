@@ -1,9 +1,9 @@
 <template>
     <div class="slds-box slds-theme_info">
         <p>Wrapper Component (Shadow Boundary)</p>
-        <!-- NOTE: Removed oncustomevent from slot to demonstrate composed property -->
-        <!-- Event must bubble through wrapper's shadow DOM to reach parent -->
-        <slot></slot>
+        <!-- NOTE: Listening on slot to demonstrate BUBBLES property -->
+        <!-- Event bubbles up from child → wrapper slot listener captures it -->
+        <slot oncustomevent={handleChildEvent}></slot>
         <!-- Display message received in wrapper -->
         <template if:true={messageFromChild}>
             <div class="slds-m-top_medium slds-box slds-theme_warning">
