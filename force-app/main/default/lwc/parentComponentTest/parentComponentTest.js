@@ -1,6 +1,6 @@
 import { LightningElement } from 'lwc';
 
-export default class ParentComposedTest extends LightningElement {
+export default class ParentComponentTest extends LightningElement {
     messageFromChildWhenBubbleIsFalse;
     isEventReceivedWhenBubbleIsFalse = false;
 

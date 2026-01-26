@@ -23,7 +23,7 @@ export default class ChildBubbleTest extends LightningElement {
             detail: {
                 message: 'Event reached parent successfully'
             },
-            bubbles: false,  // Set to FALSE to see event stop propagating
+            bubbles: true,  // Set to FALSE to see event stop propagating
             composed: false
         });
 
