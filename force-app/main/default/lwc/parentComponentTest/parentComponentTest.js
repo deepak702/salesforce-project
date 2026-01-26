@@ -1,11 +1,11 @@
 import { LightningElement } from 'lwc';
 
 export default class ParentComponentTest extends LightningElement {
-    messageFromChildWhenBubbleIsFalse;
-    isEventReceivedWhenBubbleIsFalse = false;
+    messageFromChild;
+    isEventReceived = false;
 
-    handleChildEventBubbleIsFalse(event) {
-        this.messageFromChildWhenBubbleIsFalse = event.detail.message;
-        this.isEventReceivedWhenBubbleIsFalse = true;
+    handleChildEvent(event) {
+        this.messageFromChild = event.detail.message;
+        this.isEventReceived = true;
     }
 }
