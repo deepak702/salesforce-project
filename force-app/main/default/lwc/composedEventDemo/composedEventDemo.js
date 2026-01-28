@@ -15,31 +15,6 @@ export default class ComposedEventDemo extends LightningElement {
     console.log('composed: false → Event blocked at shadow DOM boundary\n');
   }
 
-  renderedCallback() {
-    // Try to listen for non-composed event at the grandparent level (composedEventDemo)
-    const wrapperComponent = this.template.querySelector('c-wrapper-middle');
-    
-    if (wrapperComponent && !wrapperComponent._grandparentListenerAttached) {
-      console.log('🔴 [GRANDPARENT] Attaching listener for non-composed event from grandchild');
-      
-      // Delegate from wrapper to catch events that bubble up
-      wrapperComponent.addEventListener('noncomposedcustomevent', (event) => {
-        console.error('\n🔴 [GRANDPARENT ERROR] Received non-composed event at grandparent level!');
-        console.error('Event composed:', event.composed);
-        console.error('This should NOT happen if composed: false is working correctly!');
-        console.error('The event crossed the wrapper boundary when it should have been blocked.\n');
-        
-        this.nonComposedEventReceivedAtGrandparent = true;
-        
-        setTimeout(() => {
-          this.nonComposedEventReceivedAtGrandparent = false;
-        }, 5000);
-      });
-      
-      wrapperComponent._grandparentListenerAttached = true;
-    }
-  }
-
   // Handler for composed event - WILL be received
   handleComposedEvent(event) {
     console.log('\n✅ ========================================');
@@ -58,6 +33,20 @@ export default class ComposedEventDemo extends LightningElement {
     setTimeout(() => {
       this.composedEventReceived = false;
       this.composedEventDetail = null;
+    }, 3000);
+  }
+
+  // Handler for non-composed event at grandparent level
+  handleNonComposedEventAtGrandparent(event) {
+    console.error('\n🔴 [GRANDPARENT ERROR] Received non-composed event at grandparent level!');
+    console.error('Event composed:', event.composed);
+    console.error('This should NOT happen if composed: false is working correctly!');
+    console.error('The event crossed the wrapper boundary when it should have been blocked.\n');
+    
+    this.nonComposedEventReceivedAtGrandparent = true;
+    
+    setTimeout(() => {
+      this.nonComposedEventReceivedAtGrandparent = false;
     }, 3000);
   }
 }
