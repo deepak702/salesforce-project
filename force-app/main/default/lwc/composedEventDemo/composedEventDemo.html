@@ -47,7 +47,9 @@
         </ul>
       </div>
 
-      <c-wrapper-middle></c-wrapper-middle>
+      <c-wrapper-middle
+        onnoncomposedcustomevent={handleNonComposedEventAtGrandparent}
+      ></c-wrapper-middle>
 
       <div class="event-info" style="margin-top: 15px; background-color: #fff3e0; padding: 15px; border-left: 4px solid #ff9800;">
         <h4>🔴 Grandparent (composedEventDemo) Listener Status:</h4>
