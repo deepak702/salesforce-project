@@ -1,0 +1,25 @@
+<template>
+  <div class="wrapper-container">
+    <h3>🟠 Middle Wrapper Component (Shadow DOM Level 2)</h3>
+    <p>Non-Composed Event Child is nested inside this wrapper</p>
+    <div style="border: 2px solid #ff9800; padding: 15px; margin: 10px 0; border-radius: 4px;">
+      <p><strong>Wrapper's internal listener for non-composed event:</strong></p>
+      <c-non-composed-event-child></c-non-composed-event-child>
+      <div style="margin-top: 10px; padding: 10px; background-color: #fff3e0; border-left: 4px solid #ff9800;">
+        <p lwc:if={wrapperReceivedEvent} style="color: #e65100; font-weight: bold;">
+          ✓ Wrapper received non-composed event (EXPECTED - same shadow DOM context)
+        </p>
+        <p lwc:else style="color: #666;">
+          ✓ Wrapper listener is active and waiting for event...
+        </p>
+      </div>
+    </div>
+    
+    <div style="margin-top: 15px; padding: 10px; background-color: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 3px;">
+      <p style="margin: 0; color: #2e7d32;">
+        <strong>ℹ️ Important:</strong> The wrapper CAN receive this event because both the child and wrapper are in the same shadow DOM context.
+        The real test is: Can the GRANDPARENT (composedEventDemo) receive it? Answer: <strong>NO</strong> - because composed: false blocks crossing the wrapper's boundary.
+      </p>
+    </div>
+  </div>
+</template>

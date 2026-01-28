@@ -1,0 +1,13 @@
+<template>
+  <div class="container">
+    <h3>Child Component - Composed Event (composed: true)</h3>
+    <p>This event CAN bubble through shadow DOM boundary</p>
+    <button onclick={handleDispatchComposedEvent}>
+      Dispatch Composed Event
+    </button>
+    <p class="info-text">
+      When this button is clicked, the event will propagate to the parent component
+      and beyond, even crossing shadow DOM boundaries.
+    </p>
+  </div>
+</template>
