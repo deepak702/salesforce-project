@@ -1,0 +1,13 @@
+<template>
+  <div class="container">
+    <h3>Child Component - Non-Composed Event (composed: false)</h3>
+    <p>This event CANNOT bubble through shadow DOM boundary</p>
+    <button onclick={handleDispatchNonComposedEvent}>
+      Dispatch Non-Composed Event
+    </button>
+    <p class="info-text">
+      When this button is clicked, the event will NOT propagate beyond the shadow DOM
+      boundary. Only direct listeners on this component will receive it.
+    </p>
+  </div>
+</template>

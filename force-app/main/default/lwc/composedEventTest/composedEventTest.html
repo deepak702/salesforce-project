@@ -1,0 +1,48 @@
+<template>
+  <div class="test-container">
+    <h3>Composed Event Test - Real World Scenario</h3>
+    
+    <div class="button-group">
+      <button onclick={handleUserInteraction} class="btn-primary">
+        🔴 Dispatch Composed Event (crosses boundary)
+      </button>
+      <button onclick={handleInternalStateChange} class="btn-secondary">
+        🔵 Dispatch Non-Composed Event (blocked)
+      </button>
+    </div>
+
+    <div class="logs">
+      <div class="log-section">
+        <h4>Composed Events Log:</h4>
+        <div class="log-content">
+          <template lwc:if={composedEventLog.length}>
+            <ul>
+              <template for:each={composedEventLog} for:item="log">
+                <li key={log}>{log}</li>
+              </template>
+            </ul>
+          </template>
+          <template lwc:else>
+            <p class="empty-log">No composed events logged yet</p>
+          </template>
+        </div>
+      </div>
+
+      <div class="log-section">
+        <h4>Non-Composed Events Log:</h4>
+        <div class="log-content">
+          <template lwc:if={nonComposedEventLog.length}>
+            <ul>
+              <template for:each={nonComposedEventLog} for:item="log">
+                <li key={log}>{log}</li>
+              </template>
+            </ul>
+          </template>
+          <template lwc:else>
+            <p class="empty-log">No non-composed events logged yet</p>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
