@@ -21,7 +21,7 @@ export default class ChildBubbleTest extends LightningElement {
 
         const event = new CustomEvent('customevent', {
             detail: {
-                message: 'Event reached parent successfully'
+                message: 'Bubbling event fired from ChildBubbleTest component with bubbles:true, demonstrating event propagation through DOM hierarchy'
             },
             bubbles: true,  // Set to FALSE to see event stop propagating
             composed: false
