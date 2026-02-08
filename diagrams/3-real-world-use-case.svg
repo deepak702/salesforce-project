@@ -1,0 +1,58 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="35" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">
+    Real-World Use Case: Form Component
+  </text>
+  
+  <!-- Main Form Container -->
+  <rect x="50" y="60" width="700" height="400" fill="#f0f4ff" stroke="#1976d2" stroke-width="3" rx="10"/>
+  <text x="70" y="90" font-size="18" font-weight="bold" fill="#1976d2">
+    📋 FORM COMPONENT (Parent)
+  </text>
+  
+  <!-- Input Field 1 -->
+  <rect x="80" y="120" width="320" height="140" fill="white" stroke="#4caf50" stroke-width="2" rx="5"/>
+  <text x="100" y="145" font-size="14" font-weight="bold" fill="#2e7d32">
+    ✅ Value Changed Event
+  </text>
+  <text x="100" y="170" font-size="12" fill="#555">Event: 'valuechanged'</text>
+  <text x="100" y="190" font-size="12" fill="#555">composed: true</text>
+  
+  <rect x="95" y="200" width="290" height="2" fill="#4caf50"/>
+  <text x="100" y="220" font-size="11" fill="#333">✓ Parent knows about value change</text>
+  <text x="100" y="237" font-size="11" fill="#333">✓ Updates form state</text>
+  <text x="100" y="254" font-size="11" fill="#333">✓ Triggers validation</text>
+  
+  <!-- Input Field 2 -->
+  <rect x="420" y="120" width="320" height="140" fill="white" stroke="#f44336" stroke-width="2" rx="5"/>
+  <text x="440" y="145" font-size="14" font-weight="bold" fill="#c62828">
+    🔒 Internal State Event
+  </text>
+  <text x="440" y="170" font-size="12" fill="#555">Event: 'internalstatechanged'</text>
+  <text x="440" y="190" font-size="12" fill="#555">composed: false</text>
+  
+  <rect x="435" y="200" width="290" height="2" fill="#f44336"/>
+  <text x="440" y="220" font-size="11" fill="#333">✓ Private implementation detail</text>
+  <text x="440" y="237" font-size="11" fill="#333">✓ Parent doesn't need to know</text>
+  <text x="440" y="254" font-size="11" fill="#333">✓ Encapsulated within component</text>
+  
+  <!-- Decision Box -->
+  <rect x="80" y="280" width="640" height="160" fill="#fffde7" stroke="#f57f17" stroke-width="2" rx="5"/>
+  <text x="400" y="310" font-size="14" font-weight="bold" text-anchor="middle" fill="#f57f17">
+    💡 When to Use Which?
+  </text>
+  
+  <!-- Left column -->
+  <text x="100" y="340" font-size="12" font-weight="bold" fill="#2e7d32">Use composed: true ✅</text>
+  <text x="110" y="360" font-size="11" fill="#333">• User actions (clicks, inputs)</text>
+  <text x="110" y="375" font-size="11" fill="#333">• Value changes</text>
+  <text x="110" y="390" font-size="11" fill="#333">• Form submissions</text>
+  <text x="110" y="405" font-size="11" fill="#333">• Public API events</text>
+  
+  <!-- Right column -->
+  <text x="420" y="340" font-size="12" font-weight="bold" fill="#c62828">Use composed: false ❌</text>
+  <text x="430" y="360" font-size="11" fill="#333">• State management</text>
+  <text x="430" y="375" font-size="11" fill="#333">• Lifecycle events</text>
+  <text x="430" y="390" font-size="11" fill="#333">• Internal details</text>
+  <text x="430" y="405" font-size="11" fill="#333">• Component private logic</text>
+</svg>
