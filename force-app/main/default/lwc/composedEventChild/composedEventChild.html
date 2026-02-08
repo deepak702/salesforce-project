@@ -1,10 +1,29 @@
 <template>
+  <!-- 
+    ComposedEventChild Template
+    
+    This template provides a button to dispatch a composed custom event.
+    The event will cross the Shadow DOM boundary and reach parent components.
+  -->
   <div class="container">
     <h3>Child Component - Composed Event (composed: true)</h3>
     <p>This event CAN bubble through shadow DOM boundary</p>
+    
+    <!-- 
+      Button to trigger the composed event dispatch
+      - onclick={handleDispatchComposedEvent} binds the click event to the handler method
+      - When clicked, it creates and dispatches a CustomEvent with composed: true
+    -->
     <button onclick={handleDispatchComposedEvent}>
       Dispatch Composed Event
     </button>
+    
+    <!-- 
+      Informational text explaining the behavior
+      - Composed events (composed: true) can cross Shadow DOM boundaries
+      - This allows parent components to listen and respond to this event
+      - The event propagates up the component hierarchy to all ancestors
+    -->
     <p class="info-text">
       When this button is clicked, the event will propagate to the parent component
       and beyond, even crossing shadow DOM boundaries.
